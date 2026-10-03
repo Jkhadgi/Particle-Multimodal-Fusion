@@ -1,4 +1,4 @@
-# Attention-based multimodal fusion for single fine-particle classification
+# Multimodal fusion for single fine-particle classification
 
 This repository contains the best-performing model from the paper: an attention-based fusion network that combines transmission electron microscopy (TEM) particle images with elemental composition and particle-size metadata to classify individual fine particles into seven types: dust, fly ash, metals, organic-rich, sea spray, soot and sulfur-rich.
 
