@@ -1,6 +1,6 @@
 # Advancing automatic classification of single fine particles via multimodal deep learning framework
 
-This repository contains the official implementation of the best-performing model from the paper: an attention-based fusion network that combines transmission electron microscopy (TEM) particle images with elemental composition and particle-size metadata to classify individual fine particles into seven types: dust, fly ash, metals, organic-rich, sea spray, soot, and sulfur-rich.
+This repository contains the official implementation of the best-performing model from the paper: an attention based fusion network that combines transmission electron microscopy (TEM) particle images with elemental composition and particle size metadata to classify individual fine particles into seven types: dust, fly ash, metals, organic-rich, sea spray, soot and sulfur-rich.
 
 ## Requirements
 
