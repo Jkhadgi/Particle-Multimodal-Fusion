@@ -12,10 +12,10 @@ pip install -r requirements.txt
 ## Input data format
 
 The script expects a single Excel file with one row per particle and the following columns:
-| "Image Path" | Absolute or relative path to the TEM image of the particle |
-| "diameter_um" | Particle diameter in $\mu m$ |
-| "Final_particle_type" | Ground-truth class label (string) |
-| "Ag", "Al", "Ar", … "Zr" | Elemental signal for each element (46 columns total). "Cu" is dropped automatically; see "columns_of_interest" in the script for the full list. |
+| `"Image Path"` | Absolute or relative path to the TEM image of the particle |
+| `"diameter_um"` | Particle diameter in $\mu m$ |
+| `"Final_particle_type"` | Ground-truth class label (string) |
+| `"Ag", "Al", "Ar", … "Zr"` | Elemental signal for each element (46 columns total). "Cu" is dropped automatically; see `"columns_of_interest"` in the script for the full list. |
 
 A template with the exact column headers and a few placeholder rows is provided in example_data/metadata_template.xlsx.
 
