@@ -29,7 +29,3 @@ Hyperparameters used in the paper (image size, batch size 16, 70 epochs, learnin
 If you use this code, please cite the paper above and the Zenodo archive of this repository (DOI: 10.5281/zenodo.XXXXXXX).
 
 
-## Contact
-
-Kihong Park – kpark@gist.ac.kr
-Gwangju Institute of Science and Technology (GIST)
