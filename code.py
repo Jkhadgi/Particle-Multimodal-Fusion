@@ -2,14 +2,12 @@
 """
 Attention-based multimodal fusion model for single fine-particle classification
 ================================================================================
+Fuses TEM particle images (DenseNet169 backbone) with elemental composition and
+particle size metadata (Random Forest) through self- and
+cross-attention, and evaluates the fused model with five fold cross-validation.
 
-Fuses TEM particle images (DenseNet169 backbone) with elemental-composition and
-particle-size metadata (Random Forest probability features) through self- and
-cross-attention, and evaluates the fused model with 5-fold cross-validation.
-
-This is the best-performing model reported in:
-    Park et al., "Advancing automatic classification of single fine particles
-    via multimodal deep learning framework", Scientific Reports (in press).
+This is the best-performing model reported in: "Advancing automatic classification of single fine particles
+via multimodal deep learning framework", Scientific Reports.
 ================================================================================
 """
 
@@ -53,13 +51,12 @@ import joblib
 # ATTENTION-BASED MULTIMODAL FUSION 
 # =============================================================================
 # Pipeline, as described in the manuscript:
-#   1. Numerical modality  : particle size + 45-element composition  -> Random Forest
-#                            class probabilities used as a compact feature vector
-#   2. Morphological modality: TEM image -> DenseNet169 (fully fine-tuned) -> GAP -> Dense(64)
+#   1. Numerical modality  : particle size + 45-element composition  ==> Random Forest#                            
+#   2. Morphological modality: TEM image ==> DenseNet169 (fully fine-tuned) ==> GAP ==> Dense(64)
 #   3. Fusion              : self-attention per modality, bidirectional multi-head
 #                            cross-attention (8 heads), LayerNorm, concat,
 #                            Dense(64, ReLU) + Dropout, softmax over 7 particle types
-#   4. Evaluation          : stratified 5-fold CV; SMOTE + image augmentation applied to
+#   4. Evaluation          : stratified 5fold CV; SMOTE + image augmentation applied to
 #                            the training split only; early stopping
 # =============================================================================
 
