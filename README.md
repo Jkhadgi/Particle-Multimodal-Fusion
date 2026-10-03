@@ -10,8 +10,8 @@ bash
 pip install -r requirements.txt
 
 ## Input data format
-
-The script expects a single Excel file with one row per particle and the following columns:
+| Column | Description |
+| :--- | :--- |
 | `"Image Path"` | Absolute or relative path to the TEM image of the particle |
 | `"diameter_um"` | Particle diameter in $\mu m$ |
 | `"Final_particle_type"` | Ground-truth class label (string) |
