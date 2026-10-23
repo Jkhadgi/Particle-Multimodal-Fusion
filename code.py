@@ -457,12 +457,12 @@ for train_index, test_index in kf.split(image_paths, class_indices_all):
     opt = tf.keras.optimizers.Adam(learning_rate=learning_rate, decay=decay_rate)
     model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
 
-    weights_filename = f'best_weight_{epochs}_{batch_size}_{learning_rate}__Fold{fold}.h5'
-    weights_filepath = os.path.join(output, weights_filename)
-    model.save_weights(weights_filepath)
+    #weights_filename = f'best_weight_{epochs}_{batch_size}_{learning_rate}__Fold{fold}.h5'
+    #weights_filepath = os.path.join(output, weights_filename)
+    #model.save_weights(weights_filepath)
 
-    model_filename = f'best_model_{epochs}_{batch_size}_{learning_rate}__Fold{fold}.h5'
-    model.save(os.path.join(output, model_filename))
+    #model_filename = f'best_model_{epochs}_{batch_size}_{learning_rate}__Fold{fold}.h5'
+    #model.save(os.path.join(output, model_filename))
 
     history = model.fit(
         train_generator,
@@ -472,7 +472,12 @@ for train_index, test_index in kf.split(image_paths, class_indices_all):
         epochs=epochs,
         callbacks=[checkpoint_callback, early_stopping]
     )
-    
+    weights_filename = f'best_weight_{epochs}_{batch_size}_{learning_rate}__Fold{fold}.h5'
+    weights_filepath = os.path.join(output, weights_filename)
+    model.save_weights(weights_filepath)
+
+    model_filename = f'best_model_{epochs}_{batch_size}_{learning_rate}__Fold{fold}.h5'
+    model.save(os.path.join(output, model_filename))    
         
     # Training / validation accuracy and loss curves per fold
     plt.figure(figsize=(12, 9))
