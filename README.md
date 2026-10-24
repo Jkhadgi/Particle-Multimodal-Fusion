@@ -21,6 +21,3 @@ A template with the exact column headers and a few placeholder rows is provided 
 
 Hyperparameters used in the paperare set at the top of the script and can be changed.
 
-## Citation
-
-If you use this code, please cite the paper above and the Zenodo archive of this repository (DOI: 10.5281/zenodo.23114547).
